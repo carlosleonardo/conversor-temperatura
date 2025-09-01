@@ -3,7 +3,9 @@
 #include <windows.h>
 #endif
 
+#ifndef _WIN32
 #define scanf_s scanf
+#endif
 
 void celsius_para_fahrenheit(void);
 
