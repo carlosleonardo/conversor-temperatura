@@ -3,6 +3,8 @@
 #include <windows.h>
 #endif
 
+#define scanf_s scanf
+
 void celsius_para_fahrenheit(void);
 
 void fahrenheit_para_celsius(void);
