@@ -17,7 +17,6 @@ void celsius_para_kelvn(void);
 
 int main(void) {
 #ifdef _WIN32
-    SetConsoleCP(CP_UTF8);
     SetConsoleOutputCP(CP_UTF8);
 #endif
     int opcao = 0;
@@ -55,7 +54,7 @@ int main(void) {
 }
 
 void celsius_para_fahrenheit(void) {
-    float celsius, fahrenheit;
+    float celsius;
     printf("Digite a temperatura em Celsius: ");
     int lido = scanf_s("%f", &celsius);
     if (lido != 1) {
@@ -63,12 +62,12 @@ void celsius_para_fahrenheit(void) {
         while (getchar() != '\n'); // Limpa o buffer de entrada
         return;
     }
-    fahrenheit = (celsius * 9.0f / 5.0f) + 32.0f;
+    float fahrenheit = (celsius * 9.0f / 5.0f) + 32.0f;
     printf("Temperatura em Fahrenheit: %.2f\n", fahrenheit);
 }
 
 void fahrenheit_para_celsius(void) {
-    float celsius, fahrenheit;
+    float fahrenheit;
     printf("Digite a temperatura em Fahrenheit: ");
     int lido = scanf_s("%f", &fahrenheit);
     if (lido != 1) {
@@ -76,12 +75,12 @@ void fahrenheit_para_celsius(void) {
         while (getchar() != '\n'); // Limpa o buffer de entrada
         return;
     }
-    celsius = (fahrenheit - 32.0f) * 5.0f / 9.0f;
+    float celsius = (fahrenheit - 32.0f) * 5.0f / 9.0f;
     printf("Temperatura em Celsius: %.2f\n", celsius);
 }
 
 void kelvin_para_celsius(void) {
-    float kelvin, celsius;
+    float kelvin;
     printf("Digite a temperatura em Kelvin: ");
     int lido = scanf_s("%f", &kelvin);
     if (lido != 1) {
@@ -89,7 +88,7 @@ void kelvin_para_celsius(void) {
         while (getchar() != '\n'); // Limpa o buffer de entrada
         return;
     }
-    celsius = kelvin - 273.15f;
+    float celsius = kelvin - 273.15f;
     printf("Temperatura em Celsius: %.2f\n", celsius);
 }
 
