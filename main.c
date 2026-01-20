@@ -1,8 +1,5 @@
 #include <stdio.h>
-#ifdef _WIN32
-#include <windows.h>
-#endif
-
+#include <locale.h>
 #ifndef _WIN32
 #define scanf_s scanf
 #endif
@@ -16,9 +13,7 @@ void kelvin_para_celsius(void);
 void celsius_para_kelvn(void);
 
 int main(void) {
-#ifdef _WIN32
-    SetConsoleOutputCP(CP_UTF8);
-#endif
+    setlocale(LC_ALL, "pt_BR.UTF-8");
     int opcao = 0;
     do {
         printf("Conversor de temperatura!\n");
