@@ -4,6 +4,8 @@
 #define scanf_s scanf
 #endif
 
+#define KELVIN_TO_CELSIUS_OFFSET 273.15F
+
 void celsius_para_fahrenheit(void);
 
 void fahrenheit_para_celsius(void);
@@ -79,11 +81,11 @@ void kelvin_para_celsius(void) {
     printf("Digite a temperatura em Kelvin: ");
     int lido = scanf_s("%f", &kelvin);
     if (lido != 1) {
-        printf("tEntrada inválida! Tente novamente.\n");
+        printf("Entrada inválida! Tente novamente.\n");
         while (getchar() != '\n'); // Limpa o buffer de entrada
         return;
     }
-    float celsius = kelvin - 273.15f;
+    float celsius = kelvin - KELVIN_TO_CELSIUS_OFFSET;
     printf("Temperatura em Celsius: %.2f\n", celsius);
 }
 
@@ -96,6 +98,6 @@ void celsius_para_kelvn(void) {
         while (getchar() != '\n'); // Limpa o buffer de entrada
         return;
     }
-    float kelvin = celsius + 273.15f;
+    float kelvin = celsius + KELVIN_TO_CELSIUS_OFFSET;
     printf("Temperatura em Kelvin: %.2f\n", kelvin);
 }
