@@ -15,7 +15,7 @@ void kelvin_para_celsius(void);
 void celsius_para_kelvn(void);
 
 int main(void) {
-    setlocale(LC_ALL, "pt_BR.UTF-8");
+    setlocale(LC_ALL, ".UTF-8");
     int opcao = 0;
     do {
         printf("Conversor de temperatura!\n");
