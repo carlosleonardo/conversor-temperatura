@@ -15,7 +15,6 @@ void celsius_para_kelvn(void);
 int main(void) {
     if (setlocale(LC_ALL, ".UTF-8") == NULL) {
         printf("Não foi possível definir a localidade para pt_BR.UTF-8\n");
-        return 1;
     }
     int opcao;
     do {
