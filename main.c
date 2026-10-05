@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <locale.h>
+#include <stdbool.h>
 #ifndef _WIN32
 #define scanf_s scanf
 #endif
@@ -50,16 +51,16 @@ int main(void) {
     return 0;
 }
 
-void celsius_para_fahrenheit(void) {
+static void celsius_para_fahrenheit(void) {
     float celsius;
-    int sucesso = 0;
+    bool sucesso = false;
     while (!sucesso) {
         printf("Digite a temperatura em Celsius: ");
         const int lido = scanf_s("%f", &celsius);
         if (lido != 1) {
             printf("Entrada inválida! Tente novamente.\n");
         } else {
-            sucesso = 1;
+            sucesso = true;
         }
         while (getchar() != '\n'); // Limpa o buffer de entrada
     }
@@ -67,16 +68,16 @@ void celsius_para_fahrenheit(void) {
     printf("Temperatura em Fahrenheit: %.2f\n", fahrenheit);
 }
 
-void fahrenheit_para_celsius(void) {
+static void fahrenheit_para_celsius(void) {
     float fahrenheit;
-    int sucesso = 0;
+    bool sucesso = false;
     while (!sucesso) {
         printf("Digite a temperatura em Fahrenheit: ");
         const int lido = scanf_s("%f", &fahrenheit);
         if (lido != 1) {
             printf("Entrada inválida! Tente novamente.\n");
         } else {
-            sucesso = 1;
+            sucesso = true;
         }
         while (getchar() != '\n'); // Limpa o buffer de entrada
     }
@@ -84,16 +85,16 @@ void fahrenheit_para_celsius(void) {
     printf("Temperatura em Celsius: %.2f\n", celsius);
 }
 
-void kelvin_para_celsius(void) {
+static void kelvin_para_celsius(void) {
     float kelvin;
-    int sucesso = 0;
+    bool sucesso = false;
     while (!sucesso) {
         printf("Digite a temperatura em Kelvin: ");
         const int lido = scanf_s("%f", &kelvin);
         if (lido != 1) {
             printf("Entrada inválida! Tente novamente.\n");
         } else {
-            sucesso = 1;
+            sucesso = true;
         }
         while (getchar() != '\n'); // Limpa o buffer de entrada
     }
@@ -103,7 +104,7 @@ void kelvin_para_celsius(void) {
 
 static void celsius_para_kelvin(void) {
     float celsius;
-    int sucesso = 0;
+    bool sucesso = false;
 
     while (!sucesso) {
         printf("Digite a temperatura em Celsius: ");
@@ -111,7 +112,7 @@ static void celsius_para_kelvin(void) {
         if (lido != 1) {
             printf("Entrada inválida! Tente novamente.\n");
         } else {
-            sucesso = 1;
+            sucesso = true;
         }
         while (getchar() != '\n'); // Limpa o buffer de entrada
     }
