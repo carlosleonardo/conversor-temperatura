@@ -4,13 +4,13 @@
 #define scanf_s scanf
 #endif
 
-void celsius_para_fahrenheit(void);
+static void celsius_para_fahrenheit(void);
 
-void fahrenheit_para_celsius(void);
+static void fahrenheit_para_celsius(void);
 
-void kelvin_para_celsius(void);
+static void kelvin_para_celsius(void);
 
-void celsius_para_kelvn(void);
+static void celsius_para_kelvin(void);
 
 int main(void) {
     if (setlocale(LC_ALL, ".UTF-8") == NULL) {
@@ -38,7 +38,7 @@ int main(void) {
                 break;
             case 3: kelvin_para_celsius();
                 break;
-            case 4: celsius_para_kelvn();
+            case 4: celsius_para_kelvin();
                 break;
             case 0: printf("Saindo...\n");
                 break;
@@ -91,7 +91,7 @@ void kelvin_para_celsius(void) {
         printf("Digite a temperatura em Kelvin: ");
         const int lido = scanf_s("%f", &kelvin);
         if (lido != 1) {
-            printf("tEntrada inválida! Tente novamente.\n");
+            printf("Entrada inválida! Tente novamente.\n");
         } else {
             sucesso = 1;
         }
@@ -101,7 +101,7 @@ void kelvin_para_celsius(void) {
     printf("Temperatura em Celsius: %.2f\n", celsius);
 }
 
-void celsius_para_kelvn(void) {
+static void celsius_para_kelvin(void) {
     float celsius;
     int sucesso = 0;
 
